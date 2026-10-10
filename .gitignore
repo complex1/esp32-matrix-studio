@@ -1,0 +1,20 @@
+# Private ESP32 device credentials.
+/ESP32_Matrix_Display_Module/WiFiConfig.local.h
+
+# Local credentials, caches, editor state and compiled firmware are not source.
+.env
+.env.*
+!.env.example
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+.build/
+build/
+dist/
+*.bin
+*.elf
+*.map
+*.log
+_site/
