@@ -146,14 +146,15 @@ For browser-module and native policy checks that do not need a board or browser
 (Node.js 24 and a C++17 compiler):
 
 ```sh
-node --test web/*.test.mjs
+node --test web/*.test.mjs scripts/*.test.mjs
 bash scripts/check-native.sh
 ```
 
 The native script runs four suites with AddressSanitizer and
 UndefinedBehaviorSanitizer: modes, router connection policy, serial rendering
 revisions, and bounded HTTP form parsing. CI also checks that `WebAssets.h`
-matches the browser source. Native tests use display/Arduino stand-ins; they do
+decompresses to the exact browser source, allowing different valid gzip encodings
+across Node.js/platform versions. Native tests use display/Arduino stand-ins; they do
 not replace an Arduino build or physical panel observation.
 
 ## Public Pages controller

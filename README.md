@@ -62,13 +62,13 @@ From `ESP32_Matrix_Display_Module`, with Node.js 24 and a C++17 compiler:
 ```sh
 node scripts/embed_web.mjs
 node scripts/embed_web.mjs --check
-node --test web/*.test.mjs
+node --test web/*.test.mjs scripts/*.test.mjs
 bash scripts/check-native.sh
 ```
 
 The generated `WebAssets.h` must be refreshed after browser changes so the
 ESP-hosted UI matches the source. PR checks have read-only repository access and
-run asset verification, all Node tests, and four native C++ sanitizer suites
+run decompressed-asset verification, all Node tests, and four native C++ sanitizer suites
 (mode rendering, router policy, serial rendering revisions, and HTTP parsing).
 The Pages deployment runs the same checks first. These checks do not flash a
 board and cannot prove physical LED output.
